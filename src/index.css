@@ -11,6 +11,7 @@
 @layer utilities {
   .animate-gradient-x {
     animation: gradient-x 15s linear infinite;
+    background-size: 400% 400%;
   }
 
   @keyframes gradient-x {
@@ -24,6 +25,15 @@
       background-position: 0% 50%;
     }
   }
+}
+
+/* Monaco Editor Customizations */
+.monaco-editor .margin {
+  @apply transition-colors duration-200;
+}
+
+.monaco-editor .line-numbers {
+  @apply opacity-50 !important;
 }
 
 /* Custom scrollbar styles */
@@ -42,4 +52,11 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-500/50;
+}
+
+/* Editor theme transitions */
+.monaco-editor,
+.monaco-editor .margin,
+.monaco-editor .monaco-editor-background {
+  transition: background-color 0.2s ease-in-out !important;
 }
